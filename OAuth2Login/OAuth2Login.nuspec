@@ -36,7 +36,7 @@
     <copyright>Copyright ©2017</copyright>
 
     <!-- Tags appear in the gallery and can be used for tag searches -->
-    <tags>OAuth2 external login PvApp</tags>
+    <tags>OAuth2 external login</tags>
 
     <!-- Dependencies are automatically installed when the package is installed -->
     <dependencies>
