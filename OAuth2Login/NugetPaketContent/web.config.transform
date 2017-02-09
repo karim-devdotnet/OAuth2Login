@@ -1,0 +1,8 @@
+﻿<?xml version="1.0"?>
+<configuration>
+  <configSections>
+    <section name="oauth2.login.configuration" type="OAuth2Login.Configuration.OAuthConfigurationSection, OAuth2Login"/>
+  </configSections>
+  <oauth2.login.configuration configSource="Web.Oauth.config"/>
+
+</configuration>

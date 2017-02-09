@@ -1,0 +1,65 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>OAuth2Login</h1>
+    <p class="lead">OAuth2 Social Logins - Facebook, Google, Twitter, PayPal - ASP.NET MVC C#.</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Login with Facebook</h2>
+        <p>
+            <a href="/Account/Login/Facebook" class="btn btn-default" >Facebook</a>
+        </p>
+    </div>
+    
+    <div class="col-md-4">
+        <h2>Login with GooglePlus</h2>
+
+        <p>
+            <input type="button" class="btn btn-default" value="Google" onclick="loginMethods.authGoogle()" />
+        </p>
+    </div>
+
+    <div class="col-md-4">
+        <h2>Login with Twitter</h2>
+
+        <p>
+            <input type="button" class="btn btn-default" value="Twitter" onclick="loginMethods.authTwitter()" />
+        </p>
+    </div>
+    
+</div>
+
+<script type="text/javascript">
+    // external login providers
+    var loginMethods = {
+        openWindow: function (url, name, iWidth, iHeight) {
+            //var iTop = (window.screen.availHeight - 30 - iHeight) / 2;
+            //var iLeft = (window.screen.availWidth - 10 - iWidth) / 2;
+            window.open(url,"_self")//name, 'height=' + iHeight + ',innerHeight=' + iHeight + ',width=' + iWidth + ',innerWidth=' + iWidth + ',top=' + iTop + ',left=' + iLeft + ',toolbar=no,menubar=no,scrollbars=yes,resizeable=no,location=no,status=no');
+        },
+
+        authFacebook: function (mode) {
+            loginMethods.openWindow('/Account/Login/Facebook?mode=' + mode, '', 680, 340);
+        },
+
+        authTwitter: function (mode) {
+            loginMethods.openWindow('/Account/Login/Twitter?mode=' + mode, '', 680, 520);
+        },
+
+        authGoogle: function (mode) {
+            loginMethods.openWindow('/Account/Login/Google?mode=' + mode, '', 680, 520);
+        },
+
+        authPayPal: function (mode) {
+            loginMethods.openWindow('/Account/Login/PayPal?mode=' + mode, '', 400, 550);
+        },
+
+        handleRedirect: function (url) {
+            window.location = url;
+        }
+    };
+</script>

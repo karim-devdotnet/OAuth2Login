@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <!-- The identifier that must be unique within the hosting gallery -->
+    <id>OAuth2Login</id>
+
+    <!-- The package version number that is used when resolving dependencies -->
+    <version>1.0.0.628</version>
+
+    <!-- Authors contain text that appears directly on the gallery -->
+    <authors>kaimabd84</authors>
+
+    <!-- Owners are typically nuget.org identities that allow gallery 
+         users to earily find other packages by the same owners.  -->
+    <owners>https://github.com/karimabd84</owners>
+
+    <!-- License and project URLs provide links for the gallery 
+    <licenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</licenseUrl>
+    <projectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>-->
+
+    <!-- The icon is used in Visual Studio's package manager UI 
+    <iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>-->
+
+    <!-- If true, this value prompts the user to accept the license when
+         installing the package. -->
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+
+    <!-- Any details about this particular release -->
+    <releaseNotes>make the absolute callback Url dynamic depending on the called url of the website</releaseNotes>
+
+    <!-- The description can be used in package manager UI. Note that the 
+         nuget.org gallery uses information you add in the portal. -->
+    <description>OAuth2 Social Logins - Facebook, Google, Twitter, PayPal ... - C#</description>
+
+    <!-- Copyright information -->
+    <copyright>Copyright ©2017</copyright>
+
+    <!-- Tags appear in the gallery and can be used for tag searches -->
+    <tags>OAuth2 external login PvApp</tags>
+
+    <!-- Dependencies are automatically installed when the package is installed -->
+    <dependencies>
+      <dependency id="Newtonsoft.Json" version="6.0.4" />
+    </dependencies>
+  </metadata>
+
+  <!-- A readme.txt will be displayed when the package is installed -->
+  <files>
+
+    <file src="\readme.txt" target="" />
+
+    <!--include web.config (must be in content folder)-->
+    <file src="NugetPaketContent\Web.Oauth.config" target="content" />
+    <file src="NugetPaketContent\Web.config.transform" target="content" />
+    
+
+    <!-- include the debug symbols -->
+    <file src="bin\Debug\OAuth2Login.pdb" target="lib\net45" />
+    <file src="bin\Debug\OAuth2Login.dll" target="lib\net45" />
+
+    <!--include source files-->
+    <file src="\Client\*.cs" target="sources\Client" />
+    <file src="\Configuration\*.cs" target="sources\Configuration" />
+    <file src="\Core\*.cs" target="sources\Core" />
+    <file src="\Interface\*.cs" target="sources\Interface" />
+    <file src="\Service\*.cs" target="sources\Service" />
+    <file src="*.cs" target="sources" />
+  </files>
+</package>
+
+<!--============ Help ====================
+https://docs.nuget.org/ndocs/create-packages/creating-a-package#from-a-visual-studio-project
+
+1.NuGet-Kommandozeilentool „installieren“
+  Downloaden der nuget.exe von https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
+  Einfügen des Speicherortes von nuget.exe in die PATH-Variable von Windows, damit sie von überall gefunden wird.
+2. >cd P:\Absolute\CrossSectionProjects\OAuth2Login\OAuth2Login
+3. P:\Absolute\CrossSectionProjects\OAuth2Login\OAuth2Login > nuget spec
+4. nuget pack OAuth2Login.nuspec 
+OR
+nuget pack OAuth2Login.nuspec -Build -IncludeReferencedProjects -Prop Configuration=Debug
+
+How to create nuget paket?
+nuget pack OAuth2Login.csproj -IncludeReferencedProjects -Prop Configuration=Release
+Or
+nuget pack OAuth2Login.nuspec
+-->
