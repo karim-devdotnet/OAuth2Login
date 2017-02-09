@@ -11,6 +11,7 @@ Step2: Update the configuration in the added file "Web.Oauth.config" and replace
 - clientsecret
 - callbackUrl
 - scope
+-...
 
 ------------------------------------------------------------------
 ----------------- Examplpe of integration-------------------------
